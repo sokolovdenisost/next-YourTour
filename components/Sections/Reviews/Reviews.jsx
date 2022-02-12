@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./Reviews.module.css";
 
 import { H2, H5 } from "../../Headlines/Headlines";
-import { ReviewsItem } from "./ReviewsItem";
+import { ReviewsItem } from "./ReviewsItem/ReviewsItem";
 
 import com from "../../../public/com.png";
 import comment from "../../../public/comment.png";

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TourCard } from "../../TourCard/TourCard";
 import classes from "./Choose.module.css";
-import { ChooseItem } from "./ChooseItem";
+import { ChooseItem } from "./ChooseItem/ChooseItem";
 
 import img1 from "../../../public/img1.jpg";
 import img2 from "../../../public/img2.jpg";

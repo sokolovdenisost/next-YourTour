@@ -1,7 +1,7 @@
 import React from "react";
 import { H2, H5 } from "../../Headlines/Headlines";
 import classes from "./History.module.css";
-import { HistoryItem } from "./HistoryItem";
+import { HistoryItem } from "./HistoryItem/HistoryItem";
 
 import img1 from "../../../public/history-img1.jpg";
 import img2 from "../../../public/history-img2.jpg";

@@ -1,7 +1,7 @@
 import React from "react";
-import classes from "./Reviews.module.css";
+import classes from "./ReviewsItem.module.css";
 
-import { H3, H4, H6 } from "../../Headlines/Headlines";
+import { H3, H4, H6 } from "../../../Headlines/Headlines";
 
 export const ReviewsItem = ({ children, name, tour, img }) => {
   return (

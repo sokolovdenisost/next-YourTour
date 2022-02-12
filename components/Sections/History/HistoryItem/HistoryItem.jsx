@@ -1,8 +1,8 @@
 import React from "react";
-import classes from "./History.module.css";
+import classes from "./HistoryItem.module.css";
 
-import arrow from "../../../public/arrow.png";
-import { H3, H4, H5 } from "../../Headlines/Headlines";
+import arrow from "../../../../public/arrow.png";
+import { H3, H4, H5 } from "../../../Headlines/Headlines";
 
 export const HistoryItem = ({ children, title, img, list, links }) => {
   const mapList = list.map((l, idx) => (

@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./Choose.module.css";
+import classes from "./ChooseItem.module.css";
 
 export const ChooseItem = ({ children, id, checked, onChange }) => {
   const changeHandler = (e) => {
