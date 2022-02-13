@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import classes from "./Label.module.css";
 
 export const Label = ({ id, children }) => {
@@ -7,4 +8,9 @@ export const Label = ({ id, children }) => {
       {children}
     </label>
   );
+};
+
+Label.propTypes = {
+  id: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
 };

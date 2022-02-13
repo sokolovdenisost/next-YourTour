@@ -29,24 +29,8 @@
 
 .mainButton {
   padding: 5px 20px;
-  color: #1b1f2b;
-  background: #fff;
   font-size: 17px;
   line-height: 142%;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  transition: color, background 0.3s ease;
-}
-
-.mainButton:hover {
-  background: #efa501;
-  color: #fff;
-}
-
-.mainButton:active {
-  background: #f8e6be;
-  color: #000;
 }
 
 @media (max-width: 1919px) {

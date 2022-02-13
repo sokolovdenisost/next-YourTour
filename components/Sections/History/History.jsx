@@ -1,11 +1,11 @@
 import React from "react";
-import { H2, H5 } from "../../Headlines/Headlines";
 import classes from "./History.module.css";
 import { HistoryItem } from "./HistoryItem/HistoryItem";
 
 import img1 from "../../../public/history-img1.jpg";
 import img2 from "../../../public/history-img2.jpg";
 import img3 from "../../../public/history-img3.jpg";
+import { Section } from "../../Section/Section";
 
 const histories = [
   {
@@ -42,12 +42,8 @@ export const History = () => {
   ));
 
   return (
-    <section id="history" className={classes.history}>
-      <div className="container">
-        <H2 className={classes.historyTitle}>Истории путешествий</H2>
-        <H5 className={classes.historySubtitle}>Идейные соображения высшего порядка, а также рамки и место обучения кадров</H5>
-        <div className={classes.historyItems}>{mapHistories}</div>
-      </div>
-    </section>
+    <Section id="history" title="Истории путешествий" subtitle="Идейные соображения высшего порядка, а также рамки и место обучения кадров">
+      <div className={classes.historyItems}>{mapHistories}</div>
+    </Section>
   );
 };

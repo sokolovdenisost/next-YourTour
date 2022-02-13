@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { H3, H4, H6 } from "../Headlines/Headlines";
 import classes from "./TourCard.module.css";
 
@@ -22,4 +23,15 @@ export const TourCard = ({ img, title, price }) => {
       </div>
     </div>
   );
+};
+
+TourCard.propTypes = {
+  img: PropTypes.shape({
+    blurDataURL: PropTypes.string.isRequired,
+    height: PropTypes.number.isRequired,
+    src: PropTypes.string.isRequired,
+    width: PropTypes.number.isRequired,
+  }),
+  title: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
 };

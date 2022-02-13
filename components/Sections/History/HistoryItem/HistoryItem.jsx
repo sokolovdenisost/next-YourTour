@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import classes from "./HistoryItem.module.css";
 
 import arrow from "../../../../public/arrow.png";
@@ -34,4 +35,17 @@ export const HistoryItem = ({ children, title, img, list, links }) => {
       </div>
     </div>
   );
+};
+
+HistoryItem.propTypes = {
+  children: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  img: PropTypes.shape({
+    blurDataURL: PropTypes.string.isRequired,
+    height: PropTypes.number.isRequired,
+    src: PropTypes.string.isRequired,
+    width: PropTypes.number.isRequired,
+  }),
+  list: PropTypes.array,
+  links: PropTypes.array,
 };

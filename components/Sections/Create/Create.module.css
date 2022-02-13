@@ -2,17 +2,6 @@
   padding-top: 135px;
 }
 
-.collectTitle {
-  text-align: center;
-}
-
-.collectSubtitle {
-  margin: 30px auto 100px;
-  width: 409px;
-  color: #a6a6a6;
-  text-align: center;
-}
-
 .collectForm {
   display: flex;
   align-items: center;

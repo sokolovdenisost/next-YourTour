@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import classes from "./Headlines.module.css";
 
 export const H1 = ({ children, className }) => {
@@ -23,4 +24,34 @@ export const H5 = ({ children, className }) => {
 
 export const H6 = ({ children, className }) => {
   return <h6 className={[classes.h6, className].join(" ")}>{children}</h6>;
+};
+
+H1.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
+  className: PropTypes.string,
+};
+
+H2.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
+  className: PropTypes.string,
+};
+
+H3.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
+  className: PropTypes.string,
+};
+
+H4.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
+  className: PropTypes.string,
+};
+
+H5.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
+  className: PropTypes.string,
+};
+
+H6.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
+  className: PropTypes.string,
 };

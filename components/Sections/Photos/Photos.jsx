@@ -16,12 +16,16 @@ import img11 from "../../../public/11.jpg";
 import img12 from "../../../public/12.jpg";
 
 import { H2, H5 } from "../../Headlines/Headlines";
+import { Section } from "../../Section/Section";
 
 export const Photos = () => {
   return (
-    <section className={classes.photos}>
-      <H2 className={classes.photosTitle}>Фотографии путешествий</H2>
-      <H5 className={classes.photosSubtitle}>Идейные соображения высшего порядка, а также рамки и место обучения кадров</H5>
+    <Section
+      id="photos"
+      title="Фотографии путешествий"
+      subtitle="Идейные соображения высшего порядка, а также рамки и место обучения кадров"
+      container={false}
+    >
       <div className={classes.photosItems}>
         <div className={classes.photosBig}>
           <img src={img1.src} className={classes.photoItemBig} alt="bigPhoto" />
@@ -43,6 +47,6 @@ export const Photos = () => {
           <img src={img12.src} className={[classes.photoItemBig, classes.desktop].join(" ")} alt="bigPhoto" />
         </div>
       </div>
-    </section>
+    </Section>
   );
 };

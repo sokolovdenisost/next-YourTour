@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import classes from "./ReviewsItem.module.css";
 
 import { H3, H4, H6 } from "../../../Headlines/Headlines";
@@ -18,4 +19,16 @@ export const ReviewsItem = ({ children, name, tour, img }) => {
       </div>
     </div>
   );
+};
+
+ReviewsItem.propTypes = {
+  img: PropTypes.shape({
+    blurDataURL: PropTypes.string.isRequired,
+    height: PropTypes.number.isRequired,
+    src: PropTypes.string.isRequired,
+    width: PropTypes.number.isRequired,
+  }),
+  children: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  tour: PropTypes.string.isRequired,
 };

@@ -9,7 +9,7 @@ import img3 from "../../../public/img3.jpg";
 import img4 from "../../../public/img4.jpg";
 import img5 from "../../../public/img5.jpg";
 import img6 from "../../../public/img6.jpg";
-import { H2 } from "../../Headlines/Headlines";
+import { Section } from "../../Section/Section";
 
 const tours = [
   { id: 1, title: "Путешествие в горы", price: "от 80 000 руб", img: img1 },
@@ -38,9 +38,8 @@ export const Choose = () => {
   const mapTours = tours.map((tour) => <TourCard img={tour.img} title={tour.title} price={tour.price} key={tour.id} />);
 
   return (
-    <section id="tours" className={classes.choose}>
-      <div className="container">
-        <H2 className={classes.chooseTitle}>Выбери свой тур</H2>
+    <Section id="tours" title="Выбери свой тур">
+      <>
         <ul className={classes.chooseItems}>
           <ChooseItem onChange={changeSection} checked={sections.popular} id="popular">
             Популярные
@@ -59,7 +58,7 @@ export const Choose = () => {
           </ChooseItem>
         </ul>
         <div className={classes.chooseTours}>{mapTours}</div>
-      </div>
-    </section>
+      </>
+    </Section>
   );
 };

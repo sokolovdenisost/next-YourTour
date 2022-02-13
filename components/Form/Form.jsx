@@ -1,16 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
+import { Button } from "../Button/Button";
 import { Input } from "../Input/Input";
 import { Label } from "../Label/Label";
 import { Select } from "../Select/Select";
 import { Textarea } from "../Textarea/Textarea";
+import { changeInput } from "../../utils/change";
 import classes from "./Form.module.css";
+import { maskDate, maskTelephone } from "../../utils/masks";
 
 export const Form = () => {
+  const [form, setForm] = useState({
+    name: "",
+    select: "",
+    email: "",
+    tel: "",
+    dateOt: "",
+    dateDo: "",
+    comment: "",
+  });
+
+  const changeInputHandler = (e) => {
+    const { id } = e.target;
+    changeInput(e, form, setForm);
+
+    if (id === "tel") {
+      setForm({ ...form, tel: maskTelephone(e) });
+    }
+
+    if (id === "dateOt" || id === "dateDo") {
+      setForm({ ...form, [id]: maskDate(e) });
+    }
+  };
+
   return (
     <form className={classes.form}>
       <div className={classes.formItem}>
         <Label id="name">Имя</Label>
-        <Input id="name" label="Имя" placeholder="Введите Ваше имя" />
+        <Input id="name" label="Имя" placeholder="Введите Ваше имя" value={form.name} onChange={changeInputHandler} />
       </div>
       <div className={classes.formItem}>
         <Label id="select">Направление</Label>
@@ -18,23 +44,23 @@ export const Form = () => {
       </div>
       <div className={classes.formItem}>
         <Label id="email">Email</Label>
-        <Input id="email" label="Email" placeholder="example@mail.com" type="email" />
+        <Input id="email" label="Email" placeholder="example@mail.com" value={form.email} type="email" onChange={changeInputHandler} />
       </div>
       <div className={classes.formItem}>
         <Label id="tel">Телефон</Label>
-        <Input id="tel" label="Телефон" placeholder="8 (___)-___-__-__" type="tel" />
+        <Input id="tel" label="Телефон" placeholder="8 (___)-___-__-__" value={form.tel} type="tel" onChange={changeInputHandler} />
       </div>
       <div className={classes.formItem}>
         <Label id="dateOt">Дата от</Label>
-        <Input id="dateOt" label="Дата от" placeholder="ДД.ММ.ГГГГ" />
+        <Input id="dateOt" label="Дата от" placeholder="ДД.ММ.ГГГГ" value={form.dateOt} onChange={changeInputHandler} />
       </div>
       <div className={classes.formItem}>
         <Label id="dateDo">Дата до</Label>
-        <Input id="dateDo" label="Дата до" placeholder="ДД.ММ.ГГГГ" />
+        <Input id="dateDo" label="Дата до" placeholder="ДД.ММ.ГГГГ" value={form.dateDo} onChange={changeInputHandler} />
       </div>
       <div className={classes.formComment}>
         <Label id="comment">Комментарий</Label>
-        <Textarea id="comment" placeholder="Комментарий" />
+        <Textarea id="comment" placeholder="Комментарий" onChange={changeInputHandler} value={form.comment} />
       </div>
       <div className={classes.formItem}>
         <Label id="label">Вам есть 18 лет?</Label>
@@ -63,8 +89,12 @@ export const Form = () => {
         </span>
       </div>
       <div className={classes.formButtons}>
-        <button className={classes.formFind}>Найти тур</button>
-        <button className={classes.formDrop}>Сбросить</button>
+        <Button className={classes.findBtn} color="green">
+          Найти тур
+        </Button>
+        <Button className={classes.resetBtn} color="lightgreen">
+          Сбросить
+        </Button>
       </div>
     </form>
   );

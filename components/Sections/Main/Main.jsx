@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./Main.module.css";
 
+import { Button } from "../../Button/Button";
 import { H1, H5 } from "../../Headlines/Headlines";
 
 export const Main = () => {
@@ -13,7 +14,9 @@ export const Main = () => {
         <div className={classes.mainSubtitle}>
           <H5>Идейные соображения высшего порядка, а также рамки и место обучения кадров</H5>
         </div>
-        <button className={classes.mainButton}>Найти тур</button>
+        <Button color="main" className={classes.mainButton}>
+          Найти тур
+        </Button>
       </div>
     </section>
   );
