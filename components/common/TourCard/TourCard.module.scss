@@ -1,0 +1,164 @@
+@import "../../../styles/mixins.scss";
+
+.tourCard {
+  position: relative;
+  height: 531px;
+  width: 370px;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 50px;
+
+  &:hover {
+    .tourImage {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      transform: scale(1.2);
+    }
+
+    .tourInfo {
+      .tourMore {
+        bottom: 43px;
+        left: 30px;
+        padding: 7px 20px;
+        background: #286562;
+        border-radius: 50px;
+
+        &:active {
+          padding: 7px 20px;
+          background: #efa501;
+          border-radius: 50px;
+        }
+      }
+    }
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    background: linear-gradient(360deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.06) 48.44%, rgba(0, 0, 0, 0.5) 100%);
+    content: "";
+  }
+
+  @include _1919 {
+    width: 450px;
+  }
+
+  @include _1023 {
+    margin-bottom: 18px;
+    width: 318px;
+    height: 318px;
+    border-radius: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      .tourImage {
+        transform: scale(1);
+      }
+
+      .tourInfo {
+        pointer-events: none;
+
+        .tourMore {
+          left: 20px;
+          bottom: 20px;
+          padding: 0;
+          background: transparent;
+          border-radius: 0;
+
+          &:active {
+            background: transparent;
+            padding: 0;
+            border-radius: none;
+          }
+        }
+      }
+    }
+
+    &:active {
+      .tourInfo {
+        .tourMore {
+          left: 20px;
+          bottom: 20px;
+          padding: 0;
+          background: transparent;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+
+  .tourImage {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 370px;
+    height: 531px;
+    transition: all 0.3s ease;
+
+    @include _1919 {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    @include _1023 {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .tourInfo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+    padding: 50px;
+    color: #fff;
+    transition: all 0.3s ease;
+
+    @include _1023 {
+      padding: 25px;
+    }
+
+    .tourTitle {
+      margin-bottom: 16px;
+    }
+
+    .tourMore {
+      position: absolute;
+      bottom: 50px;
+      left: 50px;
+      display: flex;
+      align-items: center;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+
+      @include _1023 {
+        left: 20px;
+        bottom: 20px;
+      }
+
+      .tourArrow {
+        margin-left: 15px;
+      }
+    }
+  }
+}

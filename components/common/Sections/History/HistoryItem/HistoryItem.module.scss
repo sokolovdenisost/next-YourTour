@@ -1,0 +1,194 @@
+@import "../../../../../styles/mixins.scss";
+
+.historyItem {
+  position: relative;
+  padding: 60px;
+  margin-bottom: 50px;
+  width: 100%;
+  height: 567px;
+  overflow: hidden;
+  border-radius: 50px;
+  cursor: pointer;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    .historyImage {
+      transform: scale(1.2);
+    }
+
+    .historyItemInfo {
+      .historyBottom {
+        .historyMore {
+          padding: 7px 20px;
+          margin-left: -20px;
+          margin-bottom: -7px;
+          background: #286562;
+          border-radius: 50px;
+          cursor: pointer;
+
+          &:active {
+            background: #efa501;
+          }
+        }
+      }
+    }
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0.01%, rgba(0, 0, 0, 0.2) 100%);
+    content: "";
+  }
+
+  @include _1023 {
+    padding: 30px;
+    margin-bottom: 20px;
+    height: 455px;
+    border-radius: 20px;
+    pointer-events: none;
+  }
+
+  .historyImage {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    height: 567px;
+    transition: all 0.3s ease;
+    object-fit: cover;
+
+    @include _1023 {
+      height: 100%;
+    }
+  }
+
+  .historyItemInfo {
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    bottom: 60px;
+    left: 60px;
+    z-index: 3;
+
+    @include _1023 {
+      top: 30px;
+      right: 30px;
+      left: 30px;
+      bottom: 30px;
+    }
+
+    .historyItemTitle {
+      margin-bottom: 37px;
+      width: 554px;
+      color: #fff;
+
+      @include _1023 {
+        width: 100%;
+      }
+    }
+
+    .historyItemSubtitle {
+      width: 554px;
+      color: #fff;
+
+      @include _1023 {
+        width: 100%;
+      }
+    }
+
+    .historyItemList {
+      margin-top: 30px;
+      list-style-position: inside;
+
+      .historyItemLi {
+        color: #fff;
+
+        h5 {
+          display: inline;
+        }
+      }
+    }
+
+    .historyBottom {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      width: 100%;
+
+      .historyMore {
+        display: flex;
+        align-items: center;
+        color: #fff;
+        background: transparent;
+        border: none;
+        transition: all 0.3s ease;
+
+        .historyArrow {
+          margin-left: 16px;
+        }
+      }
+
+      .historySocials {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        @include _1023 {
+          display: none;
+        }
+
+        .historySocial {
+          position: relative;
+          margin-right: 35px;
+          color: #fff;
+
+          &:hover {
+            &::after {
+              content: "";
+              width: 100%;
+              height: 2px;
+              background: #fff;
+            }
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            left: 0;
+            bottom: 0;
+            transition: all 0.5s ease;
+          }
+
+          &:active {
+            h5 {
+              color: #efa501;
+            }
+
+            &::after {
+              content: "";
+              background: #efa501;
+            }
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@import "../../../../styles/mixins.scss";
+
+.chooseItems {
+  display: flex;
+  justify-content: space-between;
+  margin: 35px auto 100px;
+  width: 700px;
+  list-style: none;
+}
+
+.chooseTours {
+  display: grid;
+  grid-template-columns: 370px 370px 370px;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+
+  @include _1919 {
+    display: grid;
+    grid-template-columns: 450px 450px;
+    grid-column-gap: 18px;
+    grid-row-gap: 18px;
+  }
+
+  @include _1023 {
+    display: block;
+  }
+}

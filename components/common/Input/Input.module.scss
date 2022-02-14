@@ -1,0 +1,39 @@
+@import "../../../styles/mixins.scss";
+
+.input {
+  width: 100%;
+  padding: 20px;
+  background: #f9f7f4;
+  color: #1b1f2b;
+  font-size: 20px;
+  line-height: 142%;
+  border: 1px solid #f4f0e9;
+  border-radius: 10px;
+
+  &:hover {
+    background: #f4f0e9;
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid #a6a6a6;
+  }
+
+  &::placeholder {
+    color: #a6a6a6;
+  }
+
+  &::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+
+  [type="date"] {
+    color: #a6a6a6;
+  }
+
+  @include _1023 {
+    padding: 10px;
+    font-size: 16px;
+  }
+}

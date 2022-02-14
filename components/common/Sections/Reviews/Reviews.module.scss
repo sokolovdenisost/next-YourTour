@@ -1,0 +1,10 @@
+@import "../../../../styles/mixins.scss";
+
+.reviewsItems {
+  display: flex;
+  justify-content: space-between;
+
+  @include _1023 {
+    display: block;
+  }
+}

@@ -1,0 +1,66 @@
+@import "../../../../../styles/mixins.scss";
+
+.reviewsItem {
+  position: relative;
+  padding: 40px;
+  width: 570px;
+  background: #f4f0e9;
+  border-radius: 50px;
+
+  @include _1919 {
+    width: 450px;
+  }
+
+  @include _1023 {
+    margin-bottom: 18px;
+    padding: 20px;
+    width: 100%;
+    border-radius: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .reviewsText {
+    height: 75%;
+
+    @include _1919 {
+      height: 80%;
+    }
+
+    @include _1023 {
+      height: fit-content;
+    }
+  }
+
+  .reviewsInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 70px;
+    height: 75px;
+
+    @include _1023 {
+      margin-top: 40px;
+    }
+  }
+
+  .reviewsLeft {
+    .infoName {
+      margin-bottom: 8px;
+    }
+
+    .infoTour {
+      color: #a6a6a6;
+    }
+  }
+
+  .reviewsRight {
+    .infoImg {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+    }
+  }
+}

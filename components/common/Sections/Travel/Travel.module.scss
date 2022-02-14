@@ -1,0 +1,80 @@
+@import "../../../../styles/mixins.scss";
+
+.travel {
+  padding-top: 135px;
+  margin-bottom: 135px;
+
+  @include _1023 {
+    padding-top: 75px;
+    margin-bottom: 75px;
+  }
+
+  .travelBlock {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    width: 771px;
+
+    @include _1023 {
+      display: block;
+      width: 318px;
+    }
+
+    .travelImage {
+      height: 370px;
+      width: 370px;
+      border-radius: 50px;
+
+      @include _1023 {
+        display: block;
+        margin: 0 auto 30px;
+        width: 133px;
+        height: 130px;
+        border-radius: 20px;
+      }
+    }
+
+    .travelInfo {
+      margin-left: 30px;
+
+      @include _1023 {
+        margin-left: 0;
+        text-align: center;
+      }
+
+      .travelTitle {
+        margin-bottom: 20px;
+
+        @include _1023 {
+          margin-bottom: 20px;
+          font-weight: 700;
+        }
+      }
+
+      .travelSubtitle {
+        color: #a6a6a6;
+
+        a {
+          text-decoration: none;
+          cursor: pointer;
+          color: #1b1f2b;
+
+          &:hover {
+            border-bottom: 1px solid #1b1f2b;
+          }
+
+          &:active {
+            color: #286562;
+            border-bottom: 1px solid #286562;
+          }
+        }
+
+        @include _1023 {
+          margin: 0 auto;
+          width: 291px;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}

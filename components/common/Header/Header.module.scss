@@ -1,0 +1,109 @@
+@import "../../../styles/mixins.scss";
+
+.header {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  padding: 29px 0;
+  color: #fff;
+
+  &.headerSticky {
+    position: fixed;
+    z-index: 4;
+    left: 0;
+    right: 0;
+    color: #1b1f2b;
+    background: rgba(243, 239, 232, 0.6);
+    backdrop-filter: blur(54px);
+
+    .headerContainer {
+      .nav {
+        .navItems {
+          .navItem {
+            .navLink {
+              color: #1b1f2b;
+
+              &:hover {
+                border-bottom: 1px solid #1b1f2b;
+              }
+            }
+          }
+        }
+      }
+
+      .headerTel {
+        a {
+          color: #1b1f2b;
+        }
+      }
+    }
+  }
+
+  .headerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .headerLogo {
+      @include _1023 {
+        width: 133px;
+      }
+    }
+
+    .nav {
+      @include _1023 {
+        display: none;
+      }
+
+      .navItems {
+        display: flex;
+        align-items: center;
+        list-style: none;
+
+        @include _1023 {
+          display: none;
+        }
+
+        .navItem {
+          margin-right: 50px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          @include _1919 {
+            margin-right: 30px;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+
+          .navLink {
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+            transition: border 0.3s ease;
+
+            &:hover {
+              border-bottom: 1px solid #fff;
+            }
+          }
+        }
+      }
+    }
+
+    .headerTel {
+      font-size: 20px;
+
+      @include _1023 {
+        font-size: 16px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+  }
+}
