@@ -6,6 +6,14 @@
   margin: 35px auto 100px;
   width: 700px;
   list-style: none;
+
+  @include _1023 {
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+    margin: 30px auto 50px;
+    width: 100%;
+  }
 }
 
 .chooseTours {
